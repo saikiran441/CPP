@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+class time{
+	private:
+	int hours;
+	int minutes;
+	int seconds;
+	int totalsec;
+	public:
+		displaytime(){
+			cout<<"\nHours?"  ;
+			cin>>hours;
+			cout<<"\nMinutes? ";	
+			cin>>minutes;
+			cout<<"\nSeconds? ";
+			cin>>seconds;
+			if(hours<10&&minutes<10&&seconds<10){
+			cout<<"The time is = 0"<<hours<<":0"<<minutes<<":0"<<seconds<<endl;}
+			else{
+				if(hours<10&&minutes>10&&seconds>10){
+			cout<<"The time is = 0"<<hours<<":"<<minutes<<":"<<seconds<<endl;	
+			}else if(hours>10&&minutes<10&&seconds>10){
+				cout<<"The time is = "<<hours<<":0"<<minutes<<":"<<seconds<<endl;}
+			else{
+				cout<<"The time is = "<<hours<<":"<<minutes<<":0"<<seconds<<endl;
+			}
+			}
+			totalsec=3600*hours+60*minutes+seconds;
+			cout<<"Time in total seconds: "<<totalsec;
+		}
+};
+
+int main(){
+	time t1;
+	t1.displaytime();
+}
